@@ -1,17 +1,3 @@
--- Sample input data:
--- employees table:
--- | salary |
--- |-------|
--- | 10000  |
--- | 20000  |
--- | 30000  |
--- | 40000  |
--- | 50000  |
-
--- Sample output:
--- | salary |
--- |-------|
--- | 40000  |
 -- Find the second-highest salary from the employees table
 SELECT salary
 FROM employees
