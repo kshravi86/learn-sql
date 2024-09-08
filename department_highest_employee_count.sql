@@ -18,3 +18,4 @@ LIMIT 1;
 -- | department | employee_count |
 -- |------------|----------------|
 -- | Sales      | 3             |
+-- What is the department with the highest number of employees?
