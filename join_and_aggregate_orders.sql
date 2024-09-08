@@ -1,3 +1,5 @@
+----- write the query to join orders, customers, and products tables, and find the total order amount by each customer. 
+
 SELECT c.customer_name, SUM(o.amount) AS total_order_amount
 FROM orders o
 JOIN customers c ON o.customer_id = c.customer_id
