@@ -1,16 +1,15 @@
-WITH department_employees AS (
-    SELECT 
-        department,
-        COUNT(employee_id) AS employee_count
-    FROM 
-        employees
-    GROUP BY 
-        department
-)
-SELECT 
-    department
-FROM 
-    department_employees
-ORDER BY 
-    employee_count DESC
-LIMIT 1;
+-- Sample input data:
+-- employees table:
+-- | department | employee_id |
+-- |-----------|------------|
+-- | Sales      | 1          |
+-- | Sales      | 2          |
+-- | Sales      | 3          |
+-- | Marketing  | 4          |
+-- | Marketing  | 5          |
+-- | IT         | 6          |
+
+-- Sample output:
+-- | department |
+-- |-----------|
+-- | Sales      |

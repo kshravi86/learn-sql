@@ -1,7 +1,14 @@
-SELECT 
-    first_name,
-    last_name
-FROM 
-    employees
-WHERE 
-    first_name = last_name;
+-- Sample input data:
+-- employees table:
+-- | first_name | last_name |
+-- |-----------|-----------|
+-- | John      | John      |
+-- | Jane      | Doe       |
+-- | John      | Smith     |
+-- | Jane      | Jane      |
+
+-- Sample output:
+-- | first_name | last_name |
+-- |-----------|-----------|
+-- | John      | John      |
+-- | Jane      | Jane      |

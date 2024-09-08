@@ -1,13 +1,14 @@
-WITH ranked_salaries AS (
-    SELECT 
-        salary,
-        DENSE_RANK() OVER (ORDER BY salary DESC) AS salary_rank
-    FROM 
-        employees
-)
-SELECT 
-    salary
-FROM 
-    ranked_salaries
-WHERE 
-    salary_rank = 2;
+-- Sample input data:
+-- employees table:
+-- | salary |
+-- |-------|
+-- | 10000  |
+-- | 20000  |
+-- | 30000  |
+-- | 40000  |
+-- | 50000  |
+
+-- Sample output:
+-- | salary |
+-- |-------|
+-- | 40000  |
