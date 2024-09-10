@@ -87,7 +87,7 @@ ON customers.id = orders.customer_id;
 -- CROSS JOIN: Returns the Cartesian product of both tables
 SELECT customers.name, orders.total
 FROM customers
-CROSS JOIN orders;
+CROSS JOIN orders ON customers.id = orders.customer_id;
 
 -- Output:
 -- name  | total
