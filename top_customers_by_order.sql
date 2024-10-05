@@ -1,27 +1,27 @@
--- What are the top 3 customers with the highest total purchase amount?
+-- SQL Query to retrieve top customers by number of orders
 
-SELECT customer, SUM(amount) as total_purchase_amount
+-- This query works by first selecting the customer_id from the 'orders' table and then counting the number of orders (order_id) for each customer. The GROUP BY clause is used to group rows with the same customer_id, allowing the COUNT function to calculate the total number of orders for each customer. Finally, the results are ordered in descending order based on the total number of orders, so that customers with the highest number of orders appear first.
+
+SELECT customer_id, COUNT(order_id) AS total_orders
 FROM orders
-GROUP BY customer
-ORDER BY total_purchase_amount DESC
-LIMIT 3;
+GROUP BY customer_id
+ORDER BY total_orders DESC;
 
--- Sample input data:
--- orders table:
--- | id | customer | amount |
--- |----|----------|--------|
--- | 1  | John     | 100    |
--- | 2  | Jane     | 200    |
--- | 3  | Joe      | 150    |
--- | 4  | Jill     | 250    |
--- | 5  | Jack     | 120    |
--- | 6  | John     | 100    |
--- | 7  | Jane     | 200    |
--- | 8  | Joe      | 150    |
+-- Sample input data for 'orders' table:
+-- | order_id | customer_id |
+-- |----------|-------------|
+-- | 1        | 101         |
+-- | 2        | 102         |
+-- | 3        | 101         |
+-- | 4        | 103         |
+-- | 5        | 101         |
+-- | 6        | 102         |
 
 -- Sample output:
--- | customer | total_purchase_amount |
--- |----------|----------------------|
--- | Jill     | 250                 |
--- | Jane     | 400                 |
--- | John     | 200                 |
+-- | customer_id | total_orders |
+-- |-------------|--------------|
+-- | 101         | 3            |
+-- | 102         | 2            |
+-- | 103         | 1            |
+
+-- Modify this query to add other customer details or to filter by date range as needed.
