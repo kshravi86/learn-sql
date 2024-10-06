@@ -1,9 +1,13 @@
--- What is the second-highest salary from the employees table?
+-- Find the second-highest salary from the employees table
 
 SELECT salary
 FROM employees
 ORDER BY salary DESC
 LIMIT 1 OFFSET 1;
+
+-- This query first sorts all the rows in the employees table in descending order by salary using 'ORDER BY salary DESC'.
+-- The 'LIMIT 1 OFFSET 1' clause is used to skip the first row (which has the highest salary) 
+ -- and then select the next row (which has the second-highest salary).
 
 -- Sample input data:
 -- employees table:
